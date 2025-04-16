@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Card Battle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-info">
+            <div>Day: <span id="day-counter">1</span></div>
+            <div>Location: <span id="current-location">Forest</span></div>
+            <div>Phase: <span id="current-phase">Setup</span></div>
+        </div>
+        
+        <div class="game-controls">
+            <button id="start-game">Start Game</button>
+            <button id="reset-game">Reset Game</button>
+            <button id="pass-shop">Pass Shop</button>
+        </div>
+        
+        <div class="player-area" id="player1-area">
+            <div class="player-info">
+                <div>Player 1 Gold: <span id="player1-gold">0</span></div>
+                <button id="end-turn-player1" disabled>End Turn</button>
+            </div>
+            <div class="hero-area" id="player1-hero">
+                <div class="hero-name">Select Hero</div>
+                <div class="hero-stats"></div>
+            </div>
+            <div class="units-area" id="player1-units"></div>
+        </div>
+        
+        <div class="center-area">
+            <div class="monster-area" id="monster-cards"></div>
+            <div class="shop-area">
+                <div class="shop-card" id="equipment-shop">Equipment Card</div>
+                <div class="shop-card" id="unit-shop">Unit Card</div>
+            </div>
+        </div>
+        
+        <div class="player-area" id="player2-area">
+            <div class="player-info">
+                <div>Player 2 Gold: <span id="player2-gold">0</span></div>
+                <button id="end-turn-player2" disabled>End Turn</button>
+            </div>
+            <div class="hero-area" id="player2-hero">
+                <div class="hero-name">Select Hero</div>
+                <div class="hero-stats"></div>
+            </div>
+            <div class="units-area" id="player2-units"></div>
+        </div>
+        
+        <div class="modal" id="hero-selection-modal">
+            <div class="modal-content">
+                <h2>Select Your Hero</h2>
+                <div class="hero-options">
+                    <div class="hero-option" data-hero="necromancer">Necromancer</div>
+                    <div class="hero-option" data-hero="witch">Witch</div>
+                    <div class="hero-option" data-hero="pyromancer">Pyromancer</div>
+                    <div class="hero-option" data-hero="adept">Adept</div>
+                    <div class="hero-option" data-hero="rogue">Rogue</div>
+                    <div class="hero-option" data-hero="fugitive">Fugitive</div>
+                    <div class="hero-option" data-hero="ranger">Ranger</div>
+                    <div class="hero-option" data-hero="acolyte">Adept</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal" id="attack-modal">
+            <div class="modal-content">
+                <h2>Choose Attack Type</h2>
+                <button id="physical-attack" disabled>Physical Attack (AP)</button>
+                <button id="magical-attack" disabled>Magical Attack (MP)</button>
+                <button id="cancel-attack">Cancel</button>
+            </div>
+        </div>
+        
+        <div class="modal" id="game-over-modal">
+            <div class="modal-content">
+                <h2 id="game-result">Game Over</h2>
+                <p id="game-result-details"></p>
+                <button id="new-game">New Game</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
